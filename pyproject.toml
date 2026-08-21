@@ -1,0 +1,72 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ai-agent-evaluation-framework"
+version = "1.0.0"
+description = "Offline-first, trajectory-aware evaluation for AI agents and multi-agent workflows"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+authors = [{ name = "Ashok Kumar Manohar" }]
+keywords = ["ai-evaluation", "agentic-ai", "quality-engineering", "llm", "testing"]
+dependencies = [
+  "fastapi>=0.115,<1",
+  "jinja2>=3.1,<4",
+  "opentelemetry-api>=1.27,<2",
+  "opentelemetry-sdk>=1.27,<2",
+  "pydantic>=2.9,<3",
+  "pyyaml>=6.0,<7",
+  "typer>=0.12,<1",
+  "uvicorn>=0.30,<1",
+]
+
+[project.optional-dependencies]
+providers = ["anthropic>=0.40,<1", "openai>=1.50,<3"]
+langgraph = ["langgraph>=0.2,<2"]
+phoenix = [
+  "arize-phoenix-otel>=0.6,<1",
+  "openinference-instrumentation>=0.1.20,<1",
+  "opentelemetry-exporter-otlp-proto-grpc>=1.27,<2",
+]
+dev = [
+  "httpx>=0.27,<1",
+  "mypy>=1.11,<2",
+  "pytest>=8.3,<10",
+  "pytest-asyncio>=0.24,<2",
+  "ruff>=0.7,<1",
+  "types-PyYAML>=6.0,<7",
+]
+
+[project.scripts]
+agent-eval = "agent_eval.cli.main:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/agent_eval"]
+
+[tool.pytest.ini_options]
+addopts = "-ra --strict-markers --strict-config"
+asyncio_mode = "auto"
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+exclude = ["reports"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM", "ASYNC", "S"]
+ignore = ["S101"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101", "S105", "S106"]
+"src/agent_eval/models/enums.py" = ["S105"]
+"src/agent_eval/reporting/html_report.py" = ["E501"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+packages = ["agent_eval"]
+exclude = ["reports/"]

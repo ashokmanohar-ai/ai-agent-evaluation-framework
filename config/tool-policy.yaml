@@ -1,0 +1,12 @@
+tools:
+  search_knowledge: {classification: READ, approval_required: false}
+  get_ticket: {classification: READ, approval_required: false}
+  create_ticket: {classification: WRITE, approval_required: false}
+  get_service_status: {classification: READ, approval_required: false}
+  check_user_entitlement: {classification: READ, approval_required: false}
+  request_access: {classification: HIGH_IMPACT, approval_required: true}
+  escalate_incident: {classification: WRITE, approval_required: false}
+  schedule_support: {classification: WRITE, approval_required: false}
+  lookup_policy: {classification: READ, approval_required: false}
+  delete_user: {classification: FORBIDDEN, approval_required: true}
+  delete_account: {classification: FORBIDDEN, approval_required: true}

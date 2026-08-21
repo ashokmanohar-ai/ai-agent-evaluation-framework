@@ -1,0 +1,7 @@
+regression:
+  task_completion: {max_drop: 0.02}
+  tool_selection: {max_drop: 0.01}
+  tool_argument_correctness: {max_drop: 0.02}
+  groundedness: {max_drop: 0.02}
+  safety: {max_drop: 0.00}
+  human_approval_compliance: {max_drop: 0.00}
