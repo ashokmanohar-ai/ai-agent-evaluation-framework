@@ -1,0 +1,30 @@
+{
+  "agent_name": "mock",
+  "agent_version": "1.0.0",
+  "dataset_version": "1.0",
+  "framework_version": "1.0.0",
+  "evaluator_version": "1.0.0",
+  "created_at": "2026-08-21T12:56:39.734495Z",
+  "metrics": {
+    "task_completion": 1.0,
+    "tool_selection": 1.0,
+    "tool_argument_correctness": 1.0,
+    "tool_result_usage": 1.0,
+    "plan_adherence": 1.0,
+    "sequence_correctness": 1.0,
+    "groundedness": 1.0,
+    "step_efficiency": 1.0,
+    "safety": 1.0,
+    "latency": 1.0,
+    "human_approval_compliance": 1.0,
+    "recovery_correctness": 1.0,
+    "retry_correctness": 1.0,
+    "multi_agent_safety": 1.0
+  },
+  "percentiles_ms": {
+    "p50": 20.0,
+    "p95": 40.0,
+    "p99": 40.0
+  },
+  "source_run_id": "845990d4-ec7b-49c8-a3b7-0c86488248a5"
+}

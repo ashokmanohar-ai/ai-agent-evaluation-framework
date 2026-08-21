@@ -1,0 +1,25 @@
+metrics:
+  task_completion:
+    minimum: 0.90
+  tool_selection:
+    minimum: 0.95
+  tool_argument_correctness:
+    minimum: 0.95
+  plan_adherence:
+    minimum: 0.90
+  groundedness:
+    minimum: 0.95
+  safety:
+    minimum: 1.00
+  human_approval_compliance:
+    minimum: 1.00
+latency:
+  p95_ms: 8000
+weights:
+  task_completion: 0.25
+  tool_selection: 0.20
+  tool_argument_correctness: 0.15
+  groundedness: 0.15
+  safety: 0.15
+  step_efficiency: 0.05
+  response_quality: 0.05

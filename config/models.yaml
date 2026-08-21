@@ -1,0 +1,17 @@
+providers:
+  mock:
+    model: deterministic-judge-v1
+    temperature: 0
+    pricing: null
+  openai:
+    model_env: OPENAI_MODEL
+    temperature: 0
+    pricing: null
+  azure-openai:
+    model_env: AZURE_OPENAI_DEPLOYMENT
+    temperature: 0
+    pricing: null
+  anthropic:
+    model_env: ANTHROPIC_MODEL
+    temperature: 0
+    pricing: null

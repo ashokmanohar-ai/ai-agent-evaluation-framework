@@ -1,0 +1,15 @@
+services:
+  evaluator:
+    build: .
+    environment:
+      EVAL_MODEL_PROVIDER: mock
+      OTEL_SDK_DISABLED: "true"
+    volumes:
+      - ./reports:/app/reports
+
+  phoenix:
+    image: arizephoenix/phoenix:latest
+    profiles: [observability]
+    ports:
+      - "6006:6006"
+      - "4317:4317"

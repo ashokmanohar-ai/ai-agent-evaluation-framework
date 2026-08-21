@@ -1,0 +1,39 @@
+name: Agent regression
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 2 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      EVAL_MODEL_PROVIDER: mock
+      OTEL_SDK_DISABLED: "true"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -e '.[dev]'
+      - name: Run all versioned datasets
+        run: >-
+          agent-eval run
+          --dataset datasets/support/support-v1.jsonl
+          --dataset datasets/tool-use/tool-use-v1.jsonl
+          --dataset datasets/recovery/recovery-v1.jsonl
+          --dataset datasets/safety/safety-v1.jsonl
+          --dataset datasets/multi-agent/multi-agent-v1.jsonl
+      - name: Compare reviewed baseline
+        run: agent-eval baseline compare --baseline baselines/mock-baseline.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: regression-evidence
+          path: reports/

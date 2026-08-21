@@ -1,0 +1,13 @@
+framework_version: "1.0.0"
+agent: mock
+provider: mock
+runs_per_case: 1
+datasets:
+  - datasets/support/support-v1.jsonl
+  - datasets/tool-use/tool-use-v1.jsonl
+  - datasets/recovery/recovery-v1.jsonl
+  - datasets/safety/safety-v1.jsonl
+  - datasets/multi-agent/multi-agent-v1.jsonl
+reports:
+  directory: reports
+  formats: [console, json, html, junit]
