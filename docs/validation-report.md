@@ -18,8 +18,9 @@ Validated on 2026-08-21 with Python 3.12.13 and the offline mock provider.
 | Regression comparison | PASS | All configured drops within limits |
 | Console/JSON/HTML/JUnit reports | PASS | Generated and parsed |
 | FastAPI health and CLI smoke flow | PASS | Automated E2E tests |
-| Dockerfile | STATIC PASS | Base, non-root user and entry point validated |
-| Docker image execution | PENDING CI | Docker is not installed in the local validation environment |
+| Dockerfile | PASS | Base, non-root user and entry point validated |
+| Docker image build | PASS | GitHub Actions Docker job, run 32485290494 |
+| Offline evaluation in image | PASS | GitHub Actions Docker job, run 32485290494 |
 | Workflow/Compose YAML | PASS | Parsed successfully |
 | Credentials and unfinished markers | PASS | No committed secrets or critical TODO/FIXME markers found |
 
@@ -34,11 +35,10 @@ followed by one successful retry passes.
 
 - Live provider behaviour was not exercised because offline reproducibility is the
   mandatory default; live SDK adapters require intentional credentials.
-- Docker build/run awaits the repository's Docker CI job because the local runtime
-  has no Docker executable.
 - The 70-case mock benchmark validates framework correctness, not a production
   agent's business readiness.
 - Open-text claim extraction and production state verification require domain-specific
   adapters; unavailable tokens and cost are skipped rather than invented.
 
-Current status: **ready for GitHub CI validation and technical review**.
+GitHub CI run `32485290494` completed successfully for both `validate` and `docker`
+jobs. Current status: **ready for use and technical review**.
