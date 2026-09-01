@@ -8,6 +8,28 @@ human approval, recovery, efficiency, performance and regression quality.
 [![Python 3.12+](https://img.shields.io/badge/python-3.12%2B-3776AB)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
+## Recruiter quick tour
+
+> **60-second decision:** this repository proves evaluation engineering for AI agents through versioned datasets, normalized traces, deterministic-first metrics, hard safety gates and reproducible CI—not subjective chatbot review.
+
+| Recruiter question | Verifiable answer |
+| --- | --- |
+| **Problem** | A fluent answer does not prove that an agent used the correct tools, respected approval, changed state safely or recovered from failure. |
+| **Architecture** | Versioned cases drive a provider-independent AgentAdapter; normalized traces feed deterministic and optional model evaluators; hard gates produce JSON, HTML and JUnit regression evidence. |
+| **Evidence** | 70 curated cases across task completion, tool use, trajectory, grounding, recovery, approvals, safety and memory isolation; mock CI, baselines, FastAPI, Docker and OpenTelemetry/Phoenix integration. |
+| **Role signal** | AI Evaluation Engineer, AI Quality Engineer, LLM/Agent Test Architect and Responsible AI Test Engineer. |
+
+**Five-minute proof**
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install -e '.[dev]'
+agent-eval run --dataset datasets/support/support-v1.jsonl --agent mock
+```
+
+Expected proof: credential-free deterministic agent evaluation with console, JSON, HTML and JUnit evidence. All datasets, applications and walkthrough claims are synthetic/reference evidence unless explicitly stated otherwise.
+
 ## Why agent evaluation is different
 
 A fluent answer is not proof that an agent did the work. This framework evaluates
