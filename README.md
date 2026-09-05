@@ -8,6 +8,16 @@ human approval, recovery, efficiency, performance and regression quality.
 [![Python 3.12+](https://img.shields.io/badge/python-3.12%2B-3776AB)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
+## 📄 Technical White Paper
+
+**[Testing AI Agents: A Practical Quality Engineering Framework for Autonomous and Agentic Systems](WHITEPAPER.md)**
+
+A practitioner-focused white paper on evaluating AI agents through execution evidence rather than final-response plausibility. It covers task completion, tool correctness, trajectories, grounding, human approvals, security, recovery, memory isolation, multi-agent behavior, performance, observability, regression testing, and CI/CD quality gates.
+
+> **Core principle:** prove what the agent actually did, what evidence supported it, and whether it stayed within authorized boundaries.
+
+Citation metadata is available in [`CITATION.cff`](CITATION.cff).
+
 ## Recruiter quick tour
 
 > **60-second decision:** this repository proves evaluation engineering for AI agents through versioned datasets, normalized traces, deterministic-first metrics, hard safety gates and reproducible CI—not subjective chatbot review.
