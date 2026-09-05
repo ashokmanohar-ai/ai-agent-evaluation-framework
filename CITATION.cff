@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use or reference this work, please cite it using the metadata below."
+title: "Testing AI Agents: A Practical Quality Engineering Framework for Autonomous and Agentic Systems"
+type: article
+authors:
+  - family-names: Manohar
+    given-names: Ashok Kumar
+version: 1.0.0
+date-released: 2026-09-05
+url: "https://github.com/ashokmanohar-ai/ai-agent-evaluation-framework/blob/main/WHITEPAPER.md"
+repository-code: "https://github.com/ashokmanohar-ai/ai-agent-evaluation-framework"
+license: MIT
+keywords:
+  - AI Agents
+  - Agentic AI
+  - Quality Engineering
+  - AI Agent Testing
+  - AI Evaluation
+  - LLM Evaluation
+  - Tool Use
+  - Human in the Loop
+  - AI Security
+  - AI Governance
+  - Regression Testing
+  - Observability
+abstract: >-
+  A practical, evidence-driven Quality Engineering framework for testing autonomous
+  and agentic AI systems across task completion, tool use, trajectory correctness,
+  grounding, approval boundaries, safety, recovery, memory isolation, efficiency,
+  performance, observability, and regression quality. The framework advocates
+  deterministic-first evaluation with model-based judges reserved for genuinely
+  semantic dimensions.
